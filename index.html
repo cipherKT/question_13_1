@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16x19 Fillable Grid</title>
+    <style>
+        .container {
+            font-size: 24px; /* Adjust the font size as needed */
+            font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+        }
+        .alert {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(19, 30px);
+            grid-gap: 5px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cell {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="alert">
+        Error: !! Backend API failed job !!
+    </div>
+
+    <p>
+        MIND I MANAGE A TRUCE WITH DHARMA FOR<br>
+        ONLY IT SHALL BE LINGERING<br>
+        LONE TO THE DESIRE OF YOURS<br>
+        ALTHOUGH AN ASYMMETRY YOU MIGHT HAVE CAST ASIDE<br>
+        DISBANDING IT DUE TO A MERE TRIVIALITY.<br>
+    </p>
+    <div class="grid">
+        <!-- Create 16x19 grid cells -->
+        <script>
+            for (let i = 0; i < 16 * 19; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+
+                // Toggle between black and white when clicked
+                cell.addEventListener('click', function() {
+                    const currentColor = window.getComputedStyle(cell).backgroundColor;
+                    if (currentColor === 'rgb(0, 0, 0)') {  // black in RGB format
+                        cell.style.backgroundColor = 'white';
+                    } else {
+                        cell.style.backgroundColor = 'black';
+                    }
+                });
+
+                document.querySelector('.grid').appendChild(cell);
+            }
+        </script>
+    </div>
+</div>
+</body>
+</html>
